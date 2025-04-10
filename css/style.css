@@ -364,7 +364,12 @@ a h4:hover {
 .d-unset {
   display: unset !important;
 }
-
+.bg-gray h2{
+  padding-left: 20px;
+}
+.cp1{
+  padding-left: 30px;
+}
 .bg-primary {
   background: #ffbc3b !important;
 }
@@ -474,6 +479,7 @@ a h4:hover {
   position: relative;
   padding-left: 25px;
 }
+
 
 .custom-breadcrumb li.nasted::before {
   position: absolute;
