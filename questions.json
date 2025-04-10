@@ -1,0 +1,264 @@
+{
+  "class11": {
+    "Physical World and Measurement": [
+      {
+        "question": "What is the SI unit of force?",
+        "options": ["Newton", "Joule", "Watt", "Pascal"],
+        "answer": "A"
+      },
+      {
+        "question": "Which instrument measures length with high precision?",
+        "options": ["Ruler", "Vernier Caliper", "Thermometer", "Barometer"],
+        "answer": "B"
+      },
+      {
+        "question": "One meter is equal to how many centimeters?",
+        "options": ["10", "100", "1000", "10000"],
+        "answer": "B"
+      }
+    ],
+    "Kinematics": [
+      {
+        "question": "What is the acceleration due to gravity on Earth?",
+        "options": ["9.8 m/s²", "8.9 m/s²", "10 m/s²", "0 m/s²"],
+        "answer": "A"
+      },
+      {
+        "question": "If an object’s velocity is constant, its acceleration is?",
+        "options": ["Positive", "Negative", "Zero", "Variable"],
+        "answer": "C"
+      },
+      {
+        "question": "What is the unit of velocity?",
+        "options": ["m/s", "m/s²", "kg", "N"],
+        "answer": "A"
+      }
+    ],
+    "Laws of Motion": [
+      {
+        "question": "Newton’s First Law is also called the law of?",
+        "options": ["Inertia", "Acceleration", "Action-Reaction", "Gravitation"],
+        "answer": "A"
+      },
+      {
+        "question": "What force opposes motion between surfaces?",
+        "options": ["Gravity", "Friction", "Tension", "Magnetic"],
+        "answer": "B"
+      },
+      {
+        "question": "Which law states that force equals mass times acceleration?",
+        "options": ["First", "Second", "Third", "Universal Gravitation"],
+        "answer": "B"
+      }
+    ],
+    "Work, Energy and Power": [
+      {
+        "question": "What is the unit of work?",
+        "options": ["Newton", "Joule", "Watt", "Pascal"],
+        "answer": "B"
+      },
+      {
+        "question": "Potential energy depends on an object’s?",
+        "options": ["Speed", "Height", "Temperature", "Volume"],
+        "answer": "B"
+      },
+      {
+        "question": "Power is the rate of doing what?",
+        "options": ["Work", "Force", "Motion", "Acceleration"],
+        "answer": "A"
+      }
+    ],
+    "System of Particles and Rotational Motion": [
+      {
+        "question": "What is the rotational analog of force?",
+        "options": ["Momentum", "Torque", "Inertia", "Energy"],
+        "answer": "B"
+      },
+      {
+        "question": "The moment of inertia depends on?",
+        "options": ["Mass distribution", "Velocity", "Acceleration", "Temperature"],
+        "answer": "A"
+      }
+    ],
+    "Gravitation": [
+      {
+        "question": "Who formulated the Universal Law of Gravitation?",
+        "options": ["Newton", "Einstein", "Galileo", "Kepler"],
+        "answer": "A"
+      },
+      {
+        "question": "Gravitational force is always?",
+        "options": ["Repulsive", "Attractive", "Neutral", "Variable"],
+        "answer": "B"
+      }
+    ],
+    "Properties of Bulk Matter": [
+      {
+        "question": "What is the SI unit of pressure?",
+        "options": ["Newton", "Joule", "Pascal", "Watt"],
+        "answer": "C"
+      },
+      {
+        "question": "Hooke’s Law relates to which property?",
+        "options": ["Elasticity", "Viscosity", "Density", "Surface Tension"],
+        "answer": "A"
+      }
+    ],
+    "Thermodynamics": [
+      {
+        "question": "The First Law of Thermodynamics is a statement of?",
+        "options": ["Entropy", "Energy Conservation", "Heat Transfer", "Temperature"],
+        "answer": "B"
+      },
+      {
+        "question": "What is an isothermal process?",
+        "options": ["Constant Pressure", "Constant Temperature", "Constant Volume", "Constant Energy"],
+        "answer": "B"
+      }
+    ],
+    "Behavior of Perfect Gas and Kinetic Theory": [
+      {
+        "question": "Which gas law relates pressure and volume?",
+        "options": ["Boyle’s Law", "Charles’s Law", "Gay-Lussac’s Law", "Avogadro’s Law"],
+        "answer": "A"
+      },
+      {
+        "question": "Kinetic energy of gas molecules depends on?",
+        "options": ["Pressure", "Temperature", "Volume", "Mass"],
+        "answer": "B"
+      }
+    ],
+    "Oscillations and Waves": [
+      {
+        "question": "What is the time period of a simple pendulum proportional to?",
+        "options": ["Mass", "Length", "Amplitude", "Gravity"],
+        "answer": "B"
+      },
+      {
+        "question": "Sound waves are examples of what type of wave?",
+        "options": ["Transverse", "Longitudinal", "Electromagnetic", "Standing"],
+        "answer": "B"
+      }
+    ]
+  },
+  "class12": {
+    "Electrostatics": [
+      {
+        "question": "What is the SI unit of electric charge?",
+        "options": ["Volt", "Ampere", "Coulomb", "Ohm"],
+        "answer": "C"
+      },
+      {
+        "question": "Electric field lines point away from which charge?",
+        "options": ["Negative", "Positive", "Neutral", "Both"],
+        "answer": "B"
+      },
+      {
+        "question": "What is the formula for electric field due to a point charge?",
+        "options": ["kQ/r", "kQ/r²", "Q/r", "Q/r²"],
+        "answer": "B"
+      }
+    ],
+    "Current Electricity": [
+      {
+        "question": "Ohm’s Law is V = ?",
+        "options": ["IR", "I/R", "R/I", "I²R"],
+        "answer": "A"
+      },
+      {
+        "question": "What measures electric current?",
+        "options": ["Voltmeter", "Ammeter", "Galvanometer", "Ohmmeter"],
+        "answer": "B"
+      },
+      {
+        "question": "Resistors in series have the same?",
+        "options": ["Voltage", "Current", "Resistance", "Power"],
+        "answer": "B"
+      }
+    ],
+    "Magnetic Effects of Current and Magnetism": [
+      {
+        "question": "Who discovered the magnetic effect of current?",
+        "options": ["Faraday", "Oersted", "Ampere", "Tesla"],
+        "answer": "B"
+      },
+      {
+        "question": "The magnetic field inside a solenoid is?",
+        "options": ["Zero", "Uniform", "Radial", "Circular"],
+        "answer": "B"
+      }
+    ],
+    "Electromagnetic Induction and Alternating Currents": [
+      {
+        "question": "Faraday’s Law relates to?",
+        "options": ["Induced EMF", "Resistance", "Capacitance", "Current Flow"],
+        "answer": "A"
+      },
+      {
+        "question": "AC stands for?",
+        "options": ["Alternating Current", "Active Current", "Analog Current", "Ampere Current"],
+        "answer": "A"
+      }
+    ],
+    "Electromagnetic Waves": [
+      {
+        "question": "Which of these is an electromagnetic wave?",
+        "options": ["Sound", "Light", "Water", "Seismic"],
+        "answer": "B"
+      },
+      {
+        "question": "Electromagnetic waves travel at the speed of?",
+        "options": ["Sound", "Light", "Gravity", "Electricity"],
+        "answer": "B"
+      }
+    ],
+    "Optics": [
+      {
+        "question": "What is the bending of light called?",
+        "options": ["Reflection", "Refraction", "Diffraction", "Dispersion"],
+        "answer": "B"
+      },
+      {
+        "question": "The focal length of a plane mirror is?",
+        "options": ["Zero", "Infinity", "Positive", "Negative"],
+        "answer": "B"
+      }
+    ],
+    "Dual Nature of Matter and Radiation": [
+      {
+        "question": "Who proposed the wave-particle duality of light?",
+        "options": ["Newton", "Einstein", "de Broglie", "Planck"],
+        "answer": "C"
+      },
+      {
+        "question": "The photoelectric effect demonstrates light’s?",
+        "options": ["Wave nature", "Particle nature", "Both", "Neither"],
+        "answer": "B"
+      }
+    ],
+    "Atoms and Nuclei": [
+      {
+        "question": "Who discovered the nucleus?",
+        "options": ["Rutherford", "Bohr", "Thomson", "Dalton"],
+        "answer": "A"
+      },
+      {
+        "question": "Alpha particles are nuclei of which element?",
+        "options": ["Hydrogen", "Helium", "Carbon", "Oxygen"],
+        "answer": "B"
+      }
+    ],
+    "Electronic Devices": [
+      {
+        "question": "A diode allows current to flow in?",
+        "options": ["One direction", "Both directions", "No direction", "Circular path"],
+        "answer": "A"
+      },
+      {
+        "question": "What is the primary material in semiconductors?",
+        "options": ["Copper", "Silicon", "Iron", "Gold"],
+        "answer": "B"
+      }
+    ]
+  }
+}

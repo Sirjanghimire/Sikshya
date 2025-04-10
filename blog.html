@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <title>Educenter - Student Forum</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- ** Plugins Needed for the Project ** -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="plugins/animate/animate.css">
+  <link rel="stylesheet" href="plugins/aos/aos.css">
+  <link rel="stylesheet" href="plugins/venobox/venobox.css">
+
+  <!-- Main Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  
+  <!--Favicon-->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Inline CSS for Forum Styling -->
+  <style>
+    .forum-post {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .forum-post .post-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .forum-post .post-header .author {
+      font-weight: bold;
+      color: #007bff;
+    }
+    .forum-post .post-header .date {
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .forum-post .post-content h4 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .forum-post .post-content p {
+      color: #555;
+    }
+    .forum-post .replies {
+      margin-top: 20px;
+      padding-left: 20px;
+      border-left: 2px solid #007bff;
+    }
+    .forum-post .reply {
+      margin-bottom: 15px;
+    }
+    .forum-post .reply .author {
+      font-weight: bold;
+      color: #28a745;
+    }
+    .forum-post .reply-form {
+      margin-top: 20px;
+    }
+    .forum-form {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 40px;
+    }
+    .forum-form textarea {
+      width: 100%;
+      min-height: 100px;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- header -->
+<header class="fixed-top header">
+  <div class="top-header py-2 bg-white">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-lg-4 text-center text-lg-left">
+          <a class="text-color mr-3" href="callto:+443003030266"><strong>CALL</strong> +44 300 303 0266</a>
+          <ul class="list-inline d-inline">
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-facebook"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-linkedin"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-8 text-center text-lg-right">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="notice.html">notice</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="research.html">research</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="scholarship.html">SCHOLARSHIP</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#loginModal">login</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#signupModal">register</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navigation w-100">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light p-0">
+        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav ml-auto text-center">
+            <li class="nav-item @@home"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item @@about"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item @@courses"><a class="nav-link" href="courses.html">COURSES</a></li>
+            <li class="nav-item @@events"><a class="nav-link" href="events.html">EVENTS</a></li>
+            <li class="nav-item active"><a class="nav-link" href="forum.html">FORUM</a></li>
+            <li class="nav-item dropdown view">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Pages</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="teacher.html">Teacher</a>
+                <a class="dropdown-item" href="teacher-single.html">Teacher Single</a>
+                <a class="dropdown-item" href="notice.html">Notice</a>
+                <a class="dropdown-item" href="notice-single.html">Notice Details</a>
+                <a class="dropdown-item" href="research.html">Research</a>
+                <a class="dropdown-item" href="scholarship.html">Scholarship</a>
+                <a class="dropdown-item" href="course-single.html">Course Details</a>
+                <a class="dropdown-item" href="event-single.html">Event Details</a>
+                <a class="dropdown-item" href="forum-post.html">Forum Post</a>
+              </div>
+            </li>
+            <li class="nav-item @@contact"><a class="nav-link" href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<!-- /header -->
+
+<!-- Modals (Login/Register) remain unchanged -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Signup Modal Content (unchanged) -->
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Login Modal Content (unchanged) -->
+</div>
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="forum.html">Student Forum</a></li>
+          <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+        </ul>
+        <p class="text-lighten">Ask questions, seek help, and collaborate with fellow students. Our forum is a space for knowledge sharing and support!</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /page title -->
+
+<!-- forum section -->
+<section class="section">
+  <div class="container">
+    <!-- Post a New Question Form -->
+    <div class="forum-form">
+      <h3 class="mb-4">Ask a Question</h3>
+      <form id="newPostForm">
+        <input type="text" class="form-control mb-3" id="postTitle" placeholder="Question Title" required>
+        <textarea id="postContent" placeholder="Describe your question or problem..." required></textarea>
+        <button type="submit" class="btn btn-primary">Post Question</button>
+      </form>
+    </div>
+
+    <!-- Forum Posts -->
+    <div class="row" id="forumPosts">
+      <!-- Sample Post -->
+      <div class="col-12">
+        <div class="forum-post">
+          <div class="post-header">
+            <span class="author">Alice Smith</span>
+            <span class="date">February 22, 2025</span>
+          </div>
+          <div class="post-content">
+            <h4>How do I solve quadratic equations?</h4>
+            <p>I'm struggling with quadratic equations in Algebra. Can someone explain the steps or recommend a resource?</p>
+          </div>
+          <div class="replies">
+            <div class="reply">
+              <span class="author">Bob Johnson</span> - <span class="date">February 22, 2025</span>
+              <p>Use the quadratic formula: x = [-b ± √(b² - 4ac)] / 2a. Check out Khan Academy for examples!</p>
+            </div>
+          </div>
+          <div class="reply-form">
+            <textarea class="replyContent" placeholder="Write your reply..." required></textarea>
+            <button class="btn btn-sm btn-primary replyBtn">Reply</button>
+          </div>
+        </div>
+      </div>
+      <!-- More posts will be dynamically added here -->
+    </div>
+  </div>
+</section>
+<!-- /forum section -->
+
+<!-- footer -->
+<footer>
+  <!-- Newsletter (unchanged) -->
+  <div class="newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 ml-auto bg-primary py-5 newsletter-block">
+          <h3 class="text-white">Subscribe Now</h3>
+          <form action="#">
+            <div class="input-wrapper">
+              <input type="email" class="form-control border-0" id="newsletter" name="newsletter" placeholder="Enter Your Email...">
+              <button type="submit" value="send" class="btn btn-primary">Join</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer Content (unchanged) -->
+  <div class="footer bg-footer section border-bottom">
+    <!-- Footer content remains unchanged -->
+  </div>
+  <!-- Copyright (unchanged) -->
+  <div class="copyright py-4 bg-footer">
+    <!-- Copyright content remains unchanged -->
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- jQuery -->
+<script src="plugins/jQuery/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<!-- slick slider -->
+<script src="plugins/slick/slick.min.js"></script>
+<!-- aos -->
+<script src="plugins/aos/aos.js"></script>
+<!-- venobox popup -->
+<script src="plugins/venobox/venobox.min.js"></script>
+<!-- mixitup filter -->
+<script src="plugins/mixitup/mixitup.min.js"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+<script src="plugins/google-map/gmap.js"></script>
+
+<!-- Main Script -->
+<script src="js/script.js"></script>
+
+<!-- Forum Script -->
+<script>
+  // Sample data (in a real scenario, this would come from a backend)
+  let posts = [
+    {
+      id: 1,
+      title: "How do I solve quadratic equations?",
+      content: "I'm struggling with quadratic equations in Algebra. Can someone explain the steps or recommend a resource?",
+      author: "Alice Smith",
+      date: "February 22, 2025",
+      replies: [
+        { author: "Bob Johnson", date: "February 22, 2025", content: "Use the quadratic formula: x = [-b ± √(b² - 4ac)] / 2a. Check out Khan Academy for examples!" }
+      ]
+    }
+  ];
+
+  // Function to render posts
+  function renderPosts() {
+    const forumPosts = document.getElementById("forumPosts");
+    forumPosts.innerHTML = "";
+    posts.forEach(post => {
+      const postDiv = document.createElement("div");
+      postDiv.className = "col-12";
+      postDiv.innerHTML = `
+        <div class="forum-post" data-id="${post.id}">
+          <div class="post-header">
+            <span class="author">${post.author}</span>
+            <span class="date">${post.date}</span>
+          </div>
+          <div class="post-content">
+            <h4>${post.title}</h4>
+            <p>${post.content}</p>
+          </div>
+          <div class="replies">
+            ${post.replies.map(reply => `
+              <div class="reply">
+                <span class="author">${reply.author}</span> - <span class="date">${reply.date}</span>
+                <p>${reply.content}</p>
+              </div>
+            `).join("")}
+          </div>
+          <div class="reply-form">
+            <textarea class="replyContent" placeholder="Write your reply..." required></textarea>
+            <button class="btn btn-sm btn-primary replyBtn">Reply</button>
+          </div>
+        </div>
+      `;
+      forumPosts.appendChild(postDiv);
+    });
+
+    // Add event listeners to reply buttons
+    document.querySelectorAll(".replyBtn").forEach(btn => {
+      btn.addEventListener("click", handleReply);
+    });
+  }
+
+  // Handle new post submission
+  document.getElementById("newPostForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const title = document.getElementById("postTitle").value;
+    const content = document.getElementById("postContent").value;
+    const newPost = {
+      id: posts.length + 1,
+      title,
+      content,
+      author: "Current User", // Replace with actual logged-in user
+      date: new Date().toLocaleDateString(),
+      replies: []
+    };
+    posts.push(newPost);
+    renderPosts();
+    e.target.reset();
+  });
+
+  // Handle reply submission
+  function handleReply(e) {
+    const postDiv = e.target.closest(".forum-post");
+    const postId = parseInt(postDiv.dataset.id);
+    const replyContent = postDiv.querySelector(".replyContent").value;
+    if (replyContent.trim()) {
+      const post = posts.find(p => p.id === postId);
+      post.replies.push({
+        author: "Current User", // Replace with actual logged-in user
+        date: new Date().toLocaleDateString(),
+        content: replyContent
+      });
+      renderPosts();
+    }
+  }
+
+  // Initial render
+  renderPosts();
+</script>
+
+</body>
+</html>

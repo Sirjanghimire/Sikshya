@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn and Play - KBC Physics Edition</title>
+  <style>
+    /* Paste your full CSS here (from the original code or previous response) */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1000px;
+      width: 90%;
+      margin: 0 auto;
+      padding: 2vw;
+      position: relative;
+      box-sizing: border-box;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 2vw;
+      text-shadow: 0.2vw 0.2vw 0.5vw rgba(0, 0, 0, 0.6);
+    }
+    /* Menu Styles */
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      animation: fadeIn 0.5s ease-in;
+    }
+    .menu.hidden {
+      display: none;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .menu h2 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      margin-bottom: 2vw;
+    }
+    .menu p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      max-width: 90%;
+      margin-bottom: 3vw;
+    }
+    .class-selection {
+      margin-top: 2vw;
+      display: flex;
+      gap: 2vw;
+    }
+    .class-btn {
+      background: #ff5722;
+      padding: 1.5vw 3vw;
+      border-radius: 1vw;
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.3);
+    }
+    .class-btn:hover {
+      transform: scale(1.1);
+      background: #e64a19;
+    }
+    .start-btn {
+      background: #ff5722;
+      padding: 1.5vw 4vw;
+      border-radius: 1vw;
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.3);
+      display: none; /* Hidden until class is selected */
+    }
+    .start-btn:hover {
+      transform: scale(1.1);
+      background: #e64a19;
+    }
+    /* Hot Seat */
+    .hot-seat {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 3vw;
+      border-radius: 1.5vw;
+      margin: 5vw 0;
+      position: relative;
+      box-shadow: 0 0.5vw 2vw rgba(0, 0, 0, 0.4);
+    }
+    .hot-seat::before {
+      content: "🔥";
+      position: absolute;
+      top: -3vw;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: clamp(2rem, 5vw, 2.5rem);
+      animation: fire 1s infinite alternate;
+    }
+    @keyframes fire {
+      0% { transform: translateX(-50%) scale(1); }
+      100% { transform: translateX(-50%) scale(1.3); }
+    }
+    .question {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      margin-bottom: 3vw;
+      font-weight: bold;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5vw;
+    }
+    .option {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 2vw;
+      border-radius: 1vw;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0.3vw 0.8vw rgba(0, 0, 0, 0.2);
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+    .option:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-0.5vw);
+      box-shadow: 0 0.5vw 1.5vw rgba(0, 0, 0, 0.3);
+    }
+    .lifelines {
+      display: flex;
+      justify-content: center;
+      gap: 2.5vw;
+      margin-top: 3vw;
+      flex-wrap: wrap;
+    }
+    .lifeline {
+      background: #ff5722;
+      padding: 1.2vw 2.5vw;
+      border-radius: 1vw;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0.3vw 0.8vw rgba(0, 0, 0, 0.2);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+    .lifeline:hover {
+      transform: translateY(-0.5vw);
+      box-shadow: 0 0.5vw 1.5vw rgba(0, 0, 0, 0.3);
+    }
+    .lifeline.disabled {
+      background: #777;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+    .timer {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      margin-top: 2vw;
+      color: #ffeb3b;
+      font-weight: bold;
+      text-shadow: 0.2vw 0.2vw 0.5vw rgba(0, 0, 0, 0.5);
+    }
+    /* Money Ladder */
+    .money-ladder {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: clamp(150px, 20vw, 200px);
+      padding: 2vw;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 1vw;
+      box-shadow: 0 0.5vw 2vw rgba(0, 0, 0, 0.5);
+      font-size: clamp(0.9rem, 2vw, 1.2rem);
+    }
+    .money-ladder.left {
+      left: 2vw;
+    }
+    .money-ladder.right {
+      right: 2vw;
+    }
+    .money-ladder div {
+      padding: 1vw;
+      margin: 0.5vw 0;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 0.5vw;
+      transition: all 0.5s ease;
+    }
+    .money-ladder div.active {
+      background: #ffeb3b;
+      color: #1e3c72;
+      transform: scale(1.1);
+      box-shadow: 0 0 1vw #ffeb3b;
+    }
+    /* Game Over Screen */
+    .game-over {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 15;
+      animation: fadeIn 0.5s ease-in;
+    }
+    .game-over.show {
+      display: flex;
+    }
+    .game-over h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: #ff5722;
+      text-shadow: 0.2vw 0.2vw 0.5vw rgba(0, 0, 0, 0.6);
+    }
+    .game-over p {
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      margin: 2vw 0;
+    }
+    .game-over .restart-btn {
+      background: #ffeb3b;
+      color: #1e3c72;
+      padding: 1.5vw 4vw;
+      border-radius: 1vw;
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.3);
+    }
+    .game-over .restart-btn:hover {
+      transform: scale(1.1);
+    }
+
+    /* Media Queries for Mobile */
+    @media (max-width: 768px) {
+      .container {
+        padding: 4vw;
+      }
+      .hot-seat {
+        margin: 8vw 0;
+      }
+      .money-ladder {
+        position: static;
+        width: 100%;
+        max-width: 300px;
+        margin: 2vw auto;
+        transform: none;
+      }
+      .money-ladder.left, .money-ladder.right {
+        left: auto;
+        right: auto;
+      }
+      .lifelines {
+        flex-direction: column;
+        gap: 1.5vw;
+      }
+    }
+    @media (max-width: 480px) {
+      .hot-seat::before {
+        top: -5vw;
+      }
+      .question {
+        line-height: 1.2;
+      }
+      .option {
+        padding: 3vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="menu" id="menu">
+      <h2>Welcome to KBC - Physics Edition!</h2>
+      <p>
+        Test your Class 11 & 12 Physics knowledge! Answer 14 questions correctly to win $1,000,000. 
+        Use lifelines wisely: "50/50" removes two wrong options, "Swap Question" gives a new one. 
+        45 seconds per question. Good luck!
+      </p>
+      <div class="class-selection">
+        <div class="class-btn" id="class11Btn">Class 11</div>
+        <div class="class-btn" id="class12Btn">Class 12</div>
+      </div>
+      <div class="start-btn" id="startBtn">Click Here to Start</div>
+    </div>
+    <h1>Learn and Play - KBC Physics Edition</h1>
+    <div class="hot-seat">
+      <div class="question" id="question">Question will appear here</div>
+      <div class="options" id="options">
+        <div class="option" data-option="A">Option A</div>
+        <div class="option" data-option="B">Option B</div>
+        <div class="option" data-option="C">Option C</div>
+        <div class="option" data-option="D">Option D</div>
+      </div>
+      <div class="timer" id="timer">45s</div>
+    </div>
+    <div class="lifelines">
+      <div class="lifeline" id="fiftyFifty">50/50</div>
+      <div class="lifeline" id="swapQuestion">Swap Question</div>
+    </div>
+    <div class="money-ladder left" id="moneyLadderLeft">
+      <div data-level="14">$1,000,000</div>
+      <div data-level="13">$500,000</div>
+      <div data-level="12">$250,000</div>
+      <div data-level="11">$125,000</div>
+      <div data-level="10">$64,000</div>
+      <div data-level="9">$32,000</div>
+      <div data-level="8">$16,000</div>
+    </div>
+    <div class="money-ladder right" id="moneyLadderRight">
+      <div data-level="7">$8,000</div>
+      <div data-level="6">$4,000</div>
+      <div data-level="5">$2,000</div>
+      <div data-level="4">$1,000</div>
+      <div data-level="3">$500</div>
+      <div data-level="2">$300</div>
+      <div data-level="1">$100</div>
+    </div>
+    <div class="game-over" id="gameOver">
+      <h2>You Lost!</h2>
+      <p id="moneyEarned">Money Earned: $0</p>
+      <div class="restart-btn" id="restartBtn">Play Again</div>
+    </div>
+  </div>
+
+  <script>
+    let allQuestions = [];
+    let gameQuestions = [];
+    let selectedClass = null;
+    const moneyLevels = [0, 100, 300, 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 125000, 250000, 500000, 1000000];
+    let currentQuestionIndex = 0;
+    let lifelinesUsed = { fiftyFifty: false, swapQuestion: false };
+    let timer;
+    let timeLeft = 45;
+
+    // DOM Elements
+    const menu = document.getElementById('menu');
+    const startBtn = document.getElementById('startBtn');
+    const class11Btn = document.getElementById('class11Btn');
+    const class12Btn = document.getElementById('class12Btn');
+    const questionElement = document.getElementById('question');
+    const optionsElement = document.getElementById('options');
+    const fiftyFiftyElement = document.getElementById('fiftyFifty');
+    const swapQuestionElement = document.getElementById('swapQuestion');
+    const timerElement = document.getElementById('timer');
+    const moneyLadderLeft = document.getElementById('moneyLadderLeft');
+    const moneyLadderRight = document.getElementById('moneyLadderRight');
+    const gameOver = document.getElementById('gameOver');
+    const moneyEarned = document.getElementById('moneyEarned');
+    const restartBtn = document.getElementById('restartBtn');
+
+    // Sound Effects
+    const correctSound = new Audio('https://www.soundjay.com/misc/success-bell-01.mp3');
+    const wrongSound = new Audio('https://www.soundjay.com/misc/fail-buzzer-01.mp3');
+    const timerSound = new Audio('https://www.soundjay.com/misc/cartoon-ting-01.mp3');
+    const applauseSound = new Audio('https://www.soundjay.com/human/applause-01.mp3');
+
+    // Fetch Questions
+    async function fetchQuestions() {
+      try {
+        const response = await fetch('questions.json');
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const data = await response.json();
+        allQuestions = flattenQuestions(data);
+        console.log('Questions loaded:', allQuestions.length);
+      } catch (error) {
+        console.error('Error fetching questions:', error);
+        alert('Failed to load questions. Check if questions.json exists and is accessible. See console for details.');
+      }
+    }
+
+    // Flatten nested question structure into a single array, preserving class info
+    function flattenQuestions(data) {
+      let questions = [];
+      for (const classLevel in data) {
+        for (const chapter in data[classLevel]) {
+          data[classLevel][chapter].forEach(q => {
+            q.classLevel = classLevel; // Add class level to each question
+            questions.push(q);
+          });
+        }
+      }
+      return questions;
+    }
+
+    // Select 14 random questions from the selected class
+    function selectGameQuestions() {
+      if (!selectedClass) {
+        alert('Please select a class before starting the game.');
+        return;
+      }
+      const classQuestions = allQuestions.filter(q => q.classLevel === selectedClass);
+      if (classQuestions.length < 14) {
+        console.error('Not enough questions available for the selected class');
+        alert('Not enough questions for the selected class. Add more questions to questions.json.');
+        return;
+      }
+      gameQuestions = [];
+      const shuffled = [...classQuestions].sort(() => Math.random() - 0.5);
+      gameQuestions = shuffled.slice(0, 14);
+      console.log('Game questions selected for ' + selectedClass + ':', gameQuestions.length);
+    }
+
+    // Start Game
+    startBtn.addEventListener('click', () => {
+      console.log('Start button clicked');
+      if (!selectedClass) {
+        alert('Please select Class 11 or Class 12 before starting.');
+        return;
+      }
+      if (gameQuestions.length === 0) {
+        selectGameQuestions();
+      }
+      if (gameQuestions.length === 0) {
+        alert('Failed to load or select questions. Check the console for errors.');
+        return;
+      }
+      menu.classList.add('hidden');
+      loadQuestion();
+      updateMoneyLadder();
+    });
+
+    // Load Question
+    function loadQuestion() {
+      if (currentQuestionIndex >= gameQuestions.length) {
+        moneyEarned.textContent = `Congratulations! You Won: $${moneyLevels[moneyLevels.length - 1].toLocaleString()}`;
+        gameOver.classList.add('show');
+        return;
+      }
+      const currentQuestion = gameQuestions[currentQuestionIndex];
+      questionElement.textContent = currentQuestion.question;
+      optionsElement.querySelectorAll('.option').forEach((option, index) => {
+        option.textContent = currentQuestion.options[index];
+        option.dataset.option = String.fromCharCode(65 + index);
+        option.style.display = 'block';
+      });
+      startTimer();
+    }
+
+    // Start Timer
+    function startTimer() {
+      timeLeft = 45;
+      timerElement.textContent = `${timeLeft}s`;
+      timer = setInterval(() => {
+        timeLeft--;
+        timerElement.textContent = `${timeLeft}s`;
+        if (timeLeft <= 10) timerSound.play();
+        if (timeLeft === 0) {
+          clearInterval(timer);
+          handleGameOver();
+        }
+      }, 1000);
+    }
+
+    // Update Money Ladder
+    function updateMoneyLadder() {
+      moneyLadderLeft.querySelectorAll('div').forEach(div => div.classList.remove('active'));
+      moneyLadderRight.querySelectorAll('div').forEach(div => div.classList.remove('active'));
+      const currentLevel = currentQuestionIndex + 1;
+      const ladderDiv = document.querySelector(`.money-ladder div[data-level="${currentLevel}"]`);
+      if (ladderDiv) ladderDiv.classList.add('active');
+    }
+
+    // 50/50 Lifeline
+    fiftyFiftyElement.addEventListener('click', () => {
+      console.log('50/50 lifeline clicked');
+      if (lifelinesUsed.fiftyFifty) return;
+      lifelinesUsed.fiftyFifty = true;
+      const currentQuestion = gameQuestions[currentQuestionIndex];
+      const correctOption = currentQuestion.answer;
+      let optionsToRemove = [];
+
+      optionsElement.querySelectorAll('.option').forEach(option => {
+        if (option.dataset.option !== correctOption && option.style.display !== 'none') optionsToRemove.push(option);
+      });
+
+      optionsToRemove.sort(() => Math.random() - 0.5).slice(0, 2).forEach(option => {
+        option.style.display = 'none';
+      });
+      fiftyFiftyElement.classList.add('disabled');
+    });
+
+    // Swap Question Lifeline
+    swapQuestionElement.addEventListener('click', () => {
+      console.log('Swap Question lifeline clicked');
+      if (lifelinesUsed.swapQuestion) return;
+      lifelinesUsed.swapQuestion = true;
+      const remainingQuestions = allQuestions.filter(q => q.classLevel === selectedClass && !gameQuestions.includes(q));
+      if (remainingQuestions.length > 0) {
+        gameQuestions[currentQuestionIndex] = remainingQuestions[Math.floor(Math.random() * remainingQuestions.length)];
+      } else {
+        console.warn('No remaining questions for swap in ' + selectedClass);
+      }
+      loadQuestion();
+      swapQuestionElement.classList.add('disabled');
+    });
+
+    // Check Answer
+    optionsElement.addEventListener('click', (e) => {
+      console.log('Option clicked:', e.target.textContent);
+      if (e.target.classList.contains('option')) {
+        clearInterval(timer);
+        const selectedOption = e.target.dataset.option;
+        const correctAnswer = gameQuestions[currentQuestionIndex].answer;
+        if (selectedOption === correctAnswer) {
+          correctSound.play();
+          applauseSound.play();
+          currentQuestionIndex++;
+          updateMoneyLadder();
+          if (currentQuestionIndex < gameQuestions.length) {
+            loadQuestion();
+          } else {
+            moneyEarned.textContent = `Congratulations! You Won: $${moneyLevels[moneyLevels.length - 1].toLocaleString()}`;
+            gameOver.classList.add('show');
+          }
+        } else {
+          wrongSound.play();
+          handleGameOver();
+        }
+      }
+    });
+
+    // Handle Game Over
+    function handleGameOver() {
+      const earned = moneyLevels[currentQuestionIndex];
+      moneyEarned.textContent = `Money Earned: $${earned.toLocaleString()}`;
+      gameOver.classList.add('show');
+    }
+
+    // Restart Game
+    restartBtn.addEventListener('click', () => {
+      console.log('Restart button clicked');
+      gameOver.classList.remove('show');
+      currentQuestionIndex = 0;
+      lifelinesUsed = { fiftyFifty: false, swapQuestion: false };
+      fiftyFiftyElement.classList.remove('disabled');
+      swapQuestionElement.classList.remove('disabled');
+      selectGameQuestions();
+      loadQuestion();
+      updateMoneyLadder();
+    });
+
+    // Class Selection
+    class11Btn.addEventListener('click', () => {
+      console.log('Class 11 selected');
+      selectedClass = 'class11';
+      class11Btn.style.background = '#e64a19';
+      class12Btn.style.background = '#ff5722';
+      startBtn.style.display = 'block';
+    });
+
+    class12Btn.addEventListener('click', () => {
+      console.log('Class 12 selected');
+      selectedClass = 'class12';
+      class12Btn.style.background = '#e64a19';
+      class11Btn.style.background = '#ff5722';
+      startBtn.style.display = 'block';
+    });
+
+    // Initial fetch
+    fetchQuestions();
+  </script>
+</body>
+</html>

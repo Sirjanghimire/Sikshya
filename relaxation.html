@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <title>Educenter</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <!-- slick slider -->
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+  <!-- animation css -->
+  <link rel="stylesheet" href="plugins/animate/animate.css">
+  <!-- aos -->
+  <link rel="stylesheet" href="plugins/aos/aos.css">
+  <!-- venobox popup -->
+  <link rel="stylesheet" href="plugins/venobox/venobox.css">
+
+  <!-- Main Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  
+  <!--Favicon-->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+  
+
+<!-- header -->
+<header class="fixed-top header">
+  <!-- top header -->
+  <div class="top-header py-2 bg-white">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-lg-4 text-center text-lg-left">
+          <a class="text-color mr-3" href="callto:+443003030266"><strong>CALL</strong> +44 300 303 0266</a>
+          <ul class="list-inline d-inline">
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-facebook"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-linkedin"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-8 text-center text-lg-right">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="notice.html">notice</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="research.html">research</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="scholarship.html">SCHOLARSHIP</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#loginModal">login</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#signupModal">register</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- navbar -->
+  <div class="navigation w-100">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light p-0">
+        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav ml-auto text-center">
+            <li class="nav-item @@home">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item @@about">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item @@courses">
+              <a class="nav-link" href="courses.html">COURSES</a>
+            </li>
+            <li class="nav-item @@events">
+              <a class="nav-link" href="events.html">EVENTS</a>
+            </li>
+            <li class="nav-item @@blog">
+              <a class="nav-link" href="blog.html">BLOG</a>
+            </li>
+            <li class="nav-item dropdown view">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Pages
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="teacher.html">Teacher</a>
+                <a class="dropdown-item" href="teacher-single.html">Teacher Single</a>
+                <a class="dropdown-item" href="notice.html">Notice</a>
+                <a class="dropdown-item" href="notice-single.html">Notice Details</a>
+                <a class="dropdown-item" href="research.html">Research</a>
+                <a class="dropdown-item" href="scholarship.html">Scholarship</a>
+                <a class="dropdown-item" href="course-single.html">Course Details</a>
+                <a class="dropdown-item" href="event-single.html">Event Details</a>
+                <a class="dropdown-item" href="blog-single.html">Blog Details</a>
+              </div>
+            </li>
+            <li class="nav-item @@contact">
+              <a class="nav-link" href="contact.html">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<!-- /header -->
+<!-- Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Register</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="login">
+                    <form action="#" class="row">
+                        <div class="col-12">
+                            <input type="text" class="form-control mb-3" id="signupPhone" name="signupPhone" placeholder="Phone">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control mb-3" id="signupName" name="signupName" placeholder="Name">
+                        </div>
+                        <div class="col-12">
+                            <input type="email" class="form-control mb-3" id="signupEmail" name="signupEmail" placeholder="Email">
+                        </div>
+                        <div class="col-12">
+                            <input type="password" class="form-control mb-3" id="signupPassword" name="signupPassword" placeholder="Password">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">SIGN UP</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Login</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="#" class="row">
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginPhone" name="loginPhone" placeholder="Phone">
+                    </div>
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginName" name="loginName" placeholder="Name">
+                    </div>
+                    <div class="col-12">
+                        <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">LOGIN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- page title -->
+<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <ul class="list-inline custom-breadcrumb">
+            <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="index.html">Relaxation Hub</a></li>
+            <li class="list-inline-item text-white h3 font-secondary"></li>
+          </ul>
+          <p class="text-lighten">It's all fine to feel burn out. Sometime despite putting all our effots, we still cannot give our best. We fell
+            exhaused and our brain cannot further process any information. If you feel something like this, Don't wory its fine  everybody feels it.
+        You just need to give some rest to your brain. So, here are some movies, songs, series, and podcast I recommend you to watch if you 
+    feel down. It might help you recharge and start fresh. </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /page title -->
+  
+ <!-- relaxation hub -->
+<section class="section bg-gray">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="section-title" style="color: #6b48ff; text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">Relaxation Hub</h2>
+          <p class="lead text-muted">Take a break and immerse yourself in soothing entertainment to refresh your mind and soul.</p>
+        </div>
+      </div>
+  
+      <!-- Relaxation Categories -->
+      <div class="row">
+        <!-- Movies -->
+        <div class="col-lg-6 mb-5">
+          <div class="relaxation-card p-4" style="background: linear-gradient(135deg, #ff6b6b, #ff8787); color: white;">
+            <i class="ti-video-clapper" style="font-size: 3.5rem;"></i>
+            <h3 class="mt-3">Movies</h3>
+            <p class="mb-4">Escape into captivating stories and stunning visuals that challenge your mind.</p>
+            <ul class="list-unstyled relaxation-list">
+              <li><strong>Interstellar</strong> - A visually spectacular journey through space, time, and human emotion. Explore the mysteries of the universe and the bond between a father and his daughter.</li>
+              <li><strong>Avatar</strong> - An epic tale set on the alien world of Pandora, filled with breathtaking visuals and an exploration of environmentalism, culture, and personal growth.</li>
+              <li><strong>The Shawshank Redemption</strong> - A deeply moving story of friendship, hope, and perseverance within the confines of a prison.</li>
+              <li><strong>A Beautiful Mind</strong> - The inspiring true story of mathematician John Nash, who battles with schizophrenia while striving to solve an incredible mathematical problem.</li>
+              <li><strong>Up</strong> - A heartwarming tale about an elderly man who goes on an adventure to fulfill his deceased wife's dream, teaching us about love and letting go.</li>
+              <li><strong>Good Will Hunting</strong> - A moving story about a janitor with a genius-level intellect who struggles to accept help and embrace his potential.</li>
+              <li><strong>The Pursuit of Happyness</strong> - A powerful and uplifting story of resilience, determination, and love as a man fights for a better life for his son.</li>
+              <li><strong>Forrest Gump</strong> - A timeless classic about an esxtraordinary man living through extraordinary events, filled with life lessons and inspiration.</li>
+              <li><strong>The Secret Life of Walter Mitty</strong> - A journey of self-discovery and adventure as Walter Mitty steps out of his mundane life and embarks on a global quest.</li>
+              <li><strong>Amélie</strong> - A whimsical French tale about a shy young woman who secretly helps those around her while seeking love and happiness in her own life.</li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Series (Added Icon) -->
+        <div class="col-lg-6 mb-5">
+          <div class="relaxation-card p-4" style="background: linear-gradient(135deg, #4ecdc4, #45b7d1); color: white;">
+            <i class="ti-video-clapper" style="font-size: 3.5rem;"></i>
+            <h3 class="mt-3">Series</h3>
+            <p class="mb-4">Binge-worthy shows that combine entertainment with meaningful life lessons.</p>
+            <ul class="list-unstyled relaxation-list">
+              <li><strong>Friends</strong> - A hilarious and heartwarming sitcom about a group of friends navigating life in New York City.</li>
+              <li><strong>Brooklyn Nine-Nine</strong> - A comedy series set in a quirky NYPD precinct that balances humor with a touch of mystery.</li>
+              <li><strong>Schitt’s Creek</strong> - A family loses their fortune and moves to a small town, where they learn to reconnect with each other and their roots.</li>
+              <li><strong>Queer Eye</strong> - A heartwarming reality show where five experts transform the lives of individuals through style, grooming, culture, and more.</li>
+              <li><strong>The Marvelous Mrs. Maisel</strong> - A 1950s housewife pursues a career in stand-up comedy after her husband leaves her, defying societal expectations.</li>
+              <li><strong>Ted Lasso</strong> - An American football coach becomes the head coach of a British soccer team, winning over hearts with his optimism and kindness.</li>
+              <li><strong>Parks and Recreation</strong> - A comedic take on local government with an ensemble cast navigating the ups and downs of small-town politics.</li>
+              <li><strong>Stranger Things</strong> - A group of kids in a small town uncover dark secrets while trying to find their missing friend, blending sci-fi and nostalgia.</li>
+              <li><strong>The Good Place</strong> - A unique afterlife comedy where a woman learns what it means to be a good person while in "the Good Place."</li>
+              <li><strong>The Office</strong> - A mockumentary-style sitcom about the daily lives of employees at a mundane office, with dry humor and quirky characters.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Podcast (Placed below midpoint of Movies and Series) -->
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3 mb-5">
+          <div class="relaxation-card p-4" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
+            <i class="ti-microphone" style="font-size: 3.5rem;"></i>
+            <h3 class="mt-3">Podcasts</h3>
+            <p class="mb-4">Thoughtful conversations to relax and reflect on life, mindfulness, and the world around us.</p>
+            <ul class="list-unstyled relaxation-list">
+              <li>
+                <strong>The Daily</strong> - Insightful news, calmly told, to help you stay informed and unwind.<br>
+                <a href="https://open.spotify.com/show/3IM0lmZxpFAY7CwMuv9H4g" target="_blank" class="text-light">Listen on Spotify</a>
+              </li>
+              <li>
+                <strong>On Being</strong> - Deep, soothing discussions on spirituality, humanity, and life.<br>
+                <a href="https://open.spotify.com/show/08FqcGhz7D8NbyhFX3TLfq" target="_blank" class="text-light">Listen on Spotify</a>
+              </li>
+              <li>
+                <strong>Calm Sage</strong> - Mindfulness and peace for navigating the stresses of everyday life.<br>
+                <a href="https://open.spotify.com/show/5z7nXsL8X6sW2j6fZ8fX7q" target="_blank" class="text-light">Listen on Spotify</a>
+              </li>
+              <li>
+                <strong>TED Talks Daily</strong> - Thought-provoking and inspiring talks on topics ranging from technology to personal growth.<br>
+                <a href="https://open.spotify.com/show/4rOoJ6Egrf8K2IrywzwOMk" target="_blank" class="text-light">Listen on Spotify</a>
+              </li>
+              <li>
+                <strong>The Tim Ferriss Show</strong> - Interviews with top performers to discuss their routines, strategies, and mindset.<br>
+                <a href="https://open.spotify.com/show/5D0xXJ0gZj3s1h0ioVj6Fz" target="_blank" class="text-light">Listen on Spotify</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  <!-- /relaxation hub -->
+<!-- Updated Other Recommendations Section -->
+<div class="pg">
+    <h3>Other Recommendations:</h3>
+    <ul>
+        <li>Listen to songs that motivate and excite you</li>
+        <li>Take a walk, play with friends, and talk to your family</li>
+        <li>Travel, visit somewhere peaceful, and help somebody</li>
+        <li>Avoid using your phone for a while</li>
+    </ul>
+</div>
+
+<style>
+    .pg {
+        text-align: center;
+        background: linear-gradient(135deg, #f8f8f8, #e0e0e0);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin-top: 30px;
+    }
+
+    .pg h3 {
+        font-size: 1.8rem;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .pg ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 1.1rem;
+        color: #555;
+    }
+
+    .pg ul li {
+        background: #fff;
+        padding: 15px 20px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .pg ul li:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        background-color: #f9f9f9;
+    }
+</style>
+
+  <style>
+    .relaxation-card {
+      border-radius: 20px;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .relaxation-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+    .relaxation-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.1);
+      transform: rotate(30deg);
+      pointer-events: none;
+      transition: all 0.5s;
+    }
+    .relaxation-card:hover::before {
+      top: 100%;
+      left: 100%;
+    }
+    .pg
+    {
+        justify-content: center;
+        align-items: center;
+    }
+    .relaxation-list li {
+      margin-bottom: 15px;
+      padding-left: 10px;
+      border-left: 3px solid rgba(255, 255, 255, 0.3);
+    }
+    .relaxation-list a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .relaxation-list a:hover {
+      color: #e0e0e0 !important;
+      text-decoration: underline;
+    }
+    .section-title {
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      height: 4px;
+      background: linear-gradient(to right, #6b48ff, #ff6b6b);
+      border-radius: 2px;
+    }
+  </style>
+<!-- footer -->
+<footer>
+  <!-- footer content -->
+  <div class="footer bg-footer section border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
+          <!-- logo -->
+          <a class="logo-footer" href="index.html"><img class="img-fluid mb-4" src="images/logo.png" alt="logo"></a>
+          <ul class="list-unstyled">
+            <li class="mb-2">23621 15 Mile Rd #C104, Clinton MI, 48035, New York, USA</li>
+            <li class="mb-2">+1 (2) 345 6789</li>
+            <li class="mb-2">+1 (2) 345 6789</li>
+            <li class="mb-2">contact@yourdomain.com</li>
+          </ul>
+        </div>
+        <!-- company -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5">COMPANY</h4>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a class="text-color" href="about.html">About Us</a></li>
+            <li class="mb-3"><a class="text-color" href="teacher.html">Our Teacher</a></li>
+            <li class="mb-3"><a class="text-color" href="contact.html">Contact</a></li>
+            <li class="mb-3"><a class="text-color" href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <!-- links -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5">LINKS</h4>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a class="text-color" href="courses.html">Courses</a></li>
+            <li class="mb-3"><a class="text-color" href="event.html">Events</a></li>
+            <li class="mb-3"><a class="text-color" href="gallary.html">Gallary</a></li>
+            <li class="mb-3"><a class="text-color" href="faqs.html">FAQs</a></li>
+          </ul>
+        </div>
+        <!-- support -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5">SUPPORT</h4>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a class="text-color" href="#">Forums</a></li>
+            <li class="mb-3"><a class="text-color" href="#">Documentation</a></li>
+            <li class="mb-3"><a class="text-color" href="#">Language</a></li>
+            <li class="mb-3"><a class="text-color" href="#">Release Status</a></li>
+          </ul>
+        </div>
+        <!-- support -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5">RECOMMEND</h4>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a class="text-color" href="#">WordPress</a></li>
+            <li class="mb-3"><a class="text-color" href="#">LearnPress</a></li>
+            <li class="mb-3"><a class="text-color" href="#">WooCommerce</a></li>
+            <li class="mb-3"><a class="text-color" href="#">bbPress</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- copyright -->
+  <div class="copyright py-4 bg-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7 text-sm-left text-center">
+          <p class="mb-0">Copyright
+            <script>
+              var CurrentYear = new Date().getFullYear()
+              document.write(CurrentYear)
+            </script> 
+            © Theme By <a href="https://themefisher.com">themefisher.com</a></p> . All Rights Reserved.
+        </div>
+        <div class="col-sm-5 text-sm-right text-center">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://www.facebook.com/themefisher"><i class="ti-facebook text-primary"></i></a></li>
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://www.twitter.com/themefisher"><i class="ti-twitter-alt text-primary"></i></a></li>
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-instagram text-primary"></i></a></li>
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://dribbble.com/themefisher"><i class="ti-dribbble text-primary"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- jQuery -->
+<script src="plugins/jQuery/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<!-- slick slider -->
+<script src="plugins/slick/slick.min.js"></script>
+<!-- aos -->
+<script src="plugins/aos/aos.js"></script>
+<!-- venobox popup -->
+<script src="plugins/venobox/venobox.min.js"></script>
+<!-- mixitup filter -->
+<script src="plugins/mixitup/mixitup.min.js"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+<script src="plugins/google-map/gmap.js"></script>
+
+<!-- Main Script -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

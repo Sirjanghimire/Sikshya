@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <title>Educenter</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <!-- slick slider -->
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+  <!-- animation css -->
+  <link rel="stylesheet" href="plugins/animate/animate.css">
+  <!-- aos -->
+  <link rel="stylesheet" href="plugins/aos/aos.css">
+  <!-- venobox popup -->
+  <link rel="stylesheet" href="plugins/venobox/venobox.css">
+
+  <!-- Main Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  
+  <!--Favicon-->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+  
+
+<!-- header -->
+<header class="fixed-top header">
+  <!-- top header -->
+  <div class="top-header py-2 bg-white">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-lg-4 text-center text-lg-left">
+          <a class="text-color mr-3" href="callto:+443003030266"><strong>CALL</strong> +44 300 303 0266</a>
+          <ul class="list-inline d-inline">
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-facebook"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-linkedin"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-8 text-center text-lg-right">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="notice.html">notice</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="research.html">research</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="scholarship.html">SCHOLARSHIP</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#loginModal">login</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#signupModal">register</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- navbar -->
+  <div class="navigation w-100">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light p-0">
+        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav ml-auto text-center">
+            <li class="nav-item @@home">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item @@about">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item @@courses">
+              <a class="nav-link" href="courses.html">COURSES</a>
+            </li>
+            <li class="nav-item @@events">
+              <a class="nav-link" href="events.html">EVENTS</a>
+            </li>
+            <li class="nav-item @@blog">
+              <a class="nav-link" href="blog.html">BLOG</a>
+            </li>
+            <li class="nav-item dropdown view">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Pages
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="teacher.html">Teacher</a>
+                <a class="dropdown-item" href="teacher-single.html">Teacher Single</a>
+                <a class="dropdown-item" href="notice.html">Notice</a>
+                <a class="dropdown-item" href="notice-single.html">Notice Details</a>
+                <a class="dropdown-item" href="research.html">Research</a>
+                <a class="dropdown-item" href="scholarship.html">Scholarship</a>
+                <a class="dropdown-item" href="course-single.html">Course Details</a>
+                <a class="dropdown-item" href="event-single.html">Event Details</a>
+                <a class="dropdown-item" href="blog-single.html">Blog Details</a>
+              </div>
+            </li>
+            <li class="nav-item @@contact">
+              <a class="nav-link" href="contact.html">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<!-- /header -->
+<!-- Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Register</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="login">
+                    <form action="#" class="row">
+                        <div class="col-12">
+                            <input type="text" class="form-control mb-3" id="signupPhone" name="signupPhone" placeholder="Phone">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control mb-3" id="signupName" name="signupName" placeholder="Name">
+                        </div>
+                        <div class="col-12">
+                            <input type="email" class="form-control mb-3" id="signupEmail" name="signupEmail" placeholder="Email">
+                        </div>
+                        <div class="col-12">
+                            <input type="password" class="form-control mb-3" id="signupPassword" name="signupPassword" placeholder="Password">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">SIGN UP</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Login</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="#" class="row">
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginPhone" name="loginPhone" placeholder="Phone">
+                    </div>
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginName" name="loginName" placeholder="Name">
+                    </div>
+                    <div class="col-12">
+                        <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">LOGIN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- page title -->
+<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="index.html">Skill Learning Hub</a></li>
+          <li class="list-inline-item text-white h3 font-secondary"></li>
+        </ul>
+        <p class="text-lighten">Master the skills of tomorrow with our vibrant, resource-rich learning hub designed to inspire and empower.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /page title -->
+
+<!-- skill learning hub -->
+<section class="section bg-gray">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-12">
+        <h2 class="section-title" style="color: #ff6b6b; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">Skill Learning Hub</h2>
+        <p style="color:black; font-size: larger;">As a student, everyone of us wants to master a skill in our free time. Here are some 
+          list of probable skills you can learn that might become handy for you
+        </p>
+      </div>
+    </div>
+
+    <!-- Skill Categories -->
+    <div class="row">
+      <!-- Machine Learning -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
+          <i class="ti-settings" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Machine Learning</h3>
+          <p style="color:black;"> <strong>Applications:</strong> Chatbots, recommendation systems</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;">
+            <li><a href="https://www.coursera.org" target="_blank" style="color:black;">Coursera</a></li>
+            <li><a href="https://www.kaggle.com" target="_blank" style="color:black;">Kaggle</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Data Science -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #f6d365, #fda085); color: white;">
+          <i class="ti-stats-up" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Data Science</h3>
+          <p style="color:black;"><strong>Applications:</strong> Business intelligence, research</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://www.datacamp.com" target="_blank" style="color:black;">DataCamp</a></li>
+            <li><a href="https://www.edx.org" target="_blank" style="color:black;">edX</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Web Development -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #43cea2, #185a9d); color: white;">
+          <i class="ti-world" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Web Development</h3>
+          <p style="color:black;"><strong>Applications:</strong> Portfolios, online stores</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://www.w3schools.com" target="_blank" style="color:black;">W3Schools</a></li>
+            <li><a href="https://developer.mozilla.org" target="_blank" style="color:black;">MDN Web Docs</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Graphics Designing -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #ff9a9e, #fad0c4); color: white;">
+          <i class="ti-brush-alt" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Graphics Designing</h3>
+          <p style="color:black;"><strong>Applications:</strong> Logos, marketing materials</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://www.canva.com" target="_blank" style="color:black;">Canva</a></li>
+            <li><a href="https://www.adobe.com" target="_blank" style="color:black;">Adobe Creative Cloud</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Game Development -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #a8e063, #56ab2f); color: white;">
+          <i class="ti-game" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Game Development</h3>
+          <p style="color:black;"><strong>Applications:</strong> Video games, simulations</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://unity.com" target="_blank" style="color:black;">Unity Learn</a></li>
+            <li><a href="https://www.unrealengine.com" target="_blank" style="color:black;">Unreal Engine</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- C/C++ -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #00c6ff, #0072ff); color: white;">
+          <i class="ti-code" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">C/C++</h3>
+          <p style="color:black;"><strong>Applications:</strong> OS, embedded systems</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://www.learncpp.com" target="_blank" style="color:black;">LearnCpp</a></li>
+            <li><a href="https://www.codecademy.com" target="_blank" style="color:black;">Codecademy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Digital Marketing -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #ff758c, #ff7eb3); color: white;">
+          <i class="ti-bar-chart" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Digital Marketing</h3>
+          <p style="color:black;"><strong>Applications:</strong> SEO, social media</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://www.hubspot.com" target="_blank" style="color:black;">HubSpot Academy</a></li>
+            <li><a href="https://skillshop.withgoogle.com" target="_blank" style="color:black;">Google Skillshop</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Database/Backend -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #96c93d, #00b09b); color: white;">
+          <i class="ti-server" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Database/Backend</h3>
+          <p style="color:black;"><strong>Applications:</strong> Web apps, cloud</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://www.mongodb.com" target="_blank" style="color:black;">MongoDB University</a></li>
+            <li><a href="https://www.sqlcourse.com" target="_blank" style="color:black;">SQLCourse</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Astrophysics -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #a18cd1, #fbc2eb); color: white;">
+          <i class="ti-rocket" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Astrophysics</h3>
+          <p style="color:black;"><strong>Applications:</strong> Space missions, theory</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://www.nasa.gov" target="_blank" style="color:black;">NASA</a></li>
+            <li><a href="https://www.edx.org" target="_blank" style="color:black;">edX</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Quantum Physics -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #00c6ff, #0072ff); color: white;">
+          <i class="ti-atom" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Quantum Physics</h3>
+          <p style="color:black;"><strong>Applications:</strong> Computing, cryptography</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://quantum-computing.ibm.com" target="_blank" style="color:black;">IBM Quantum</a></li>
+            <li><a href="https://www.mit.edu" target="_blank" style="color:black;">MIT OpenCourseWare</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Public Speaking -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #ffafbd, #ffc3a0); color: white;">
+          <i class="ti-microphone" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Public Speaking</h3>
+          <p style="color:black;"><strong>Applications:</strong> Presentations, debates</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://www.toastmasters.org" target="_blank" style="color:black;">Toastmasters</a></li>
+            <li><a href="https://www.udemy.com" target="_blank" style="color:black;">Udemy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Painting -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #d4fc79, #96e6a1); color: white;">
+          <i class="ti-paint-roller" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Painting</h3>
+          <p style="color:black;"><strong>Applications:</strong> Artwork, decor</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://www.skillshare.com" target="_blank" style="color:black;">Skillshare</a></li>
+            <li><a href="https://www.artistsnetwork.com" target="_blank" style="color:black;">Artists Network</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Guitar -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #f5f7fa, #c3cfe2); color: white;">
+          <i class="ti-music" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Guitar</h3>
+          <p style="color:black;"><strong>Applications:</strong> Songs, gigs</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://www.justinguitar.com" target="_blank" style="color:black;">Justin Guitar</a></li>
+            <li><a href="https://www.fender.com/play" target="_blank" style="color:black;">Fender Play</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Freelancing -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #ff9a9e, #fad0c4); color: white;">
+          <i class="ti-briefcase" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Freelancing</h3>
+          <p style="color:black;"><strong>Applications:</strong> Projects, income</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://www.upwork.com" target="_blank" style="color:black;">Upwork</a></li>
+            <li><a href="https://www.fiverr.com" target="_blank" style="color:black;">Fiverr</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Higher Mathematics -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
+          <i class="ti-infinite" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Higher Mathematics</h3>
+          <p style="color:black;"><strong>Applications:</strong> Algorithms, physics</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://www.khanacademy.org" target="_blank" style="color:black;">Khan Academy</a></li>
+            <li><a href="https://www.wolframalpha.com" target="_blank" style="color:black;">Wolfram Alpha</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Video Editing -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #f6d365, #fda085); color: white;">
+          <i class="ti-video-camera" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Video Editing</h3>
+          <p style="color:black;"><strong>Applications:</strong> Films, YouTube</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://www.premierepro.net" target="_blank" style="color:black;">Adobe Premiere</a></li>
+            <li><a href="https://www.davinciresolve.com" target="_blank" style="color:black;">DaVinci Resolve</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Content Writing -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #43cea2, #185a9d); color: white;">
+          <i class="ti-pencil-alt" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Content Writing</h3>
+          <p style="color:black;"><strong>Applications:</strong> Articles, copywriting</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://www.copyblogger.com" target="_blank" style="color:black;">Copyblogger</a></li>
+            <li><a href="https://www.grammarly.com" target="_blank" style="color:black;">Grammarly</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Financial Knowledge -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #a8e063, #56ab2f); color: white;">
+          <i class="ti-money" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Financial Knowledge</h3>
+          <p style="color:black;"><strong>Applications:</strong> Budgeting, wealth</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://www.investopedia.com" target="_blank" style="color:black;">Investopedia</a></li>
+            <li><a href="https://www.coursera.org" target="_blank" style="color:black;">Coursera</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Business -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #ff758c, #ff7eb3); color: white;">
+          <i class="ti-briefcase" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Business</h3>
+          <p style="color:black;"><strong>Applications:</strong> Startups, leadership</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://www.edx.org" target="_blank" style="color:black;">edX Business</a></li>
+            <li><a href="https://www.entrepreneur.com" target="_blank" style="color:black;">Entrepreneur</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cooking -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #ff9a9e, #fad0c4); color: white;">
+          <i class="ti-cup" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Cooking</h3>
+          <p style="color:black;"><strong>Applications:</strong> Recipes, catering</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://www.bbcgoodfood.com" target="_blank" style="color:black;">BBC Good Food</a></li>
+            <li><a href="https://www.masterclass.com" target="_blank" style="color:black;">MasterClass</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dancing -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 hover-shadow p-4" style="background: linear-gradient(135deg, #d4fc79, #96e6a1); color: white;">
+          <i class="ti-music" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">Dancing</h3>
+          <p style="color:black;"><strong>Applications:</strong> Shows, exercise</p>
+          <h5>Resources:</h5>
+          <ul style="color:black;" class="list-unstyled">
+            <li><a href="https://www.steezy.co" target="_blank" style="color:black;">STEEZY</a></li>
+            <li><a href="https://www.youtube.com" target="_blank" style="color:black;">YouTube Tutorials</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /skill learning hub -->
+<!-- /skill learning hub -->
+
+<style>
+  .card {
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  .card a {
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .card a:hover {
+    color: #e0e0e0 !important;
+    text-decoration: underline;
+  }
+  .section-title {
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+</style>
+<!-- footer -->
+<footer>
+  <!-- newsletter -->
+  <div class="newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 ml-auto bg-primary py-5 newsletter-block">
+          <h3 class="text-white">Subscribe Now</h3>
+          <form action="#">
+            <div class="input-wrapper">
+              <input type="email" class="form-control border-0" id="newsletter" name="newsletter" placeholder="Enter Your Email...">
+              <button type="submit" value="send" class="btn btn-primary">Join</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer content -->
+  <div class="footer bg-footer section border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
+          <!-- logo -->
+          <a class="logo-footer" href="index.html"><img class="img-fluid mb-4" src="images/logo.png" alt="logo"></a>
+          <ul class="list-unstyled">
+            <li class="mb-2">23621 15 Mile Rd #C104, Clinton MI, 48035, New York, USA</li>
+            <li class="mb-2">+1 (2) 345 6789</li>
+            <li class="mb-2">+1 (2) 345 6789</li>
+            <li class="mb-2">contact@yourdomain.com</li>
+          </ul>
+        </div>
+        <!-- company -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5">COMPANY</h4>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a class="text-color" href="about.html">About Us</a></li>
+            <li class="mb-3"><a class="text-color" href="teacher.html">Our Teacher</a></li>
+            <li class="mb-3"><a class="text-color" href="contact.html">Contact</a></li>
+            <li class="mb-3"><a class="text-color" href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <!-- links -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5">LINKS</h4>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a class="text-color" href="courses.html">Courses</a></li>
+            <li class="mb-3"><a class="text-color" href="event.html">Events</a></li>
+            <li class="mb-3"><a class="text-color" href="gallary.html">Gallary</a></li>
+            <li class="mb-3"><a class="text-color" href="faqs.html">FAQs</a></li>
+          </ul>
+        </div>
+        <!-- support -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5">SUPPORT</h4>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a class="text-color" href="#">Forums</a></li>
+            <li class="mb-3"><a class="text-color" href="#">Documentation</a></li>
+            <li class="mb-3"><a class="text-color" href="#">Language</a></li>
+            <li class="mb-3"><a class="text-color" href="#">Release Status</a></li>
+          </ul>
+        </div>
+        <!-- support -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5">RECOMMEND</h4>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a class="text-color" href="#">WordPress</a></li>
+            <li class="mb-3"><a class="text-color" href="#">LearnPress</a></li>
+            <li class="mb-3"><a class="text-color" href="#">WooCommerce</a></li>
+            <li class="mb-3"><a class="text-color" href="#">bbPress</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- copyright -->
+  <div class="copyright py-4 bg-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7 text-sm-left text-center">
+          <p class="mb-0">Copyright
+            <script>
+              var CurrentYear = new Date().getFullYear()
+              document.write(CurrentYear)
+            </script> 
+            © Theme By <a href="https://themefisher.com">themefisher.com</a></p> . All Rights Reserved.
+        </div>
+        <div class="col-sm-5 text-sm-right text-center">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://www.facebook.com/themefisher"><i class="ti-facebook text-primary"></i></a></li>
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://www.twitter.com/themefisher"><i class="ti-twitter-alt text-primary"></i></a></li>
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-instagram text-primary"></i></a></li>
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://dribbble.com/themefisher"><i class="ti-dribbble text-primary"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- jQuery -->
+<script src="plugins/jQuery/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<!-- slick slider -->
+<script src="plugins/slick/slick.min.js"></script>
+<!-- aos -->
+<script src="plugins/aos/aos.js"></script>
+<!-- venobox popup -->
+<script src="plugins/venobox/venobox.min.js"></script>
+<!-- mixitup filter -->
+<script src="plugins/mixitup/mixitup.min.js"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+<script src="plugins/google-map/gmap.js"></script>
+
+<!-- Main Script -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

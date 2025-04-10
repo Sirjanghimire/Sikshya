@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn and Play - Chemistry Hangman</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 800px;
+      width: 90%;
+      margin: 0 auto;
+      padding: 2vw;
+      box-sizing: border-box;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 2vw;
+      text-shadow: 0.2vw 0.2vw 0.5vw rgba(0, 0, 0, 0.7);
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      0% { text-shadow: 0.2vw 0.2vw 0.5vw rgba(0, 0, 0, 0.7); }
+      100% { text-shadow: 0.2vw 0.2vw 1vw rgba(255, 235, 59, 0.8); }
+    }
+    /* Intro Screen */
+    .intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 20;
+      animation: fadeIn 0.5s ease-in;
+    }
+    .intro.hidden {
+      display: none;
+    }
+    .intro h2 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      margin-bottom: 2vw;
+    }
+    .intro p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      max-width: 80%;
+      margin-bottom: 3vw;
+    }
+    .start-btn {
+      background: #ff5722;
+      padding: 1.5vw 4vw;
+      border-radius: 1vw;
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.3);
+    }
+    .start-btn:hover {
+      transform: scale(1.1);
+      background: #e64a19;
+    }
+    /* Hangman Container */
+    .hangman-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3vw;
+      flex-wrap: wrap;
+      gap: 2vw;
+    }
+    .hangman {
+      position: relative;
+      width: clamp(150px, 25vw, 200px);
+      height: clamp(200px, 35vw, 300px);
+      margin: 0 auto;
+    }
+    .hangman div {
+      position: absolute;
+      background: #ffeb3b;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      opacity: 0;
+    }
+    .hangman div.show {
+      opacity: 1;
+      animation: dropIn 0.5s ease forwards;
+    }
+    @keyframes dropIn {
+      0% { transform: translateY(-20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .hangman .base { width: 75%; height: 1vw; bottom: 0; left: 12.5%; }
+    .hangman .pole { width: 1vw; height: 85%; left: 12.5%; bottom: 0; }
+    .hangman .beam { width: 50%; height: 1vw; left: 17.5%; top: 0; }
+    .hangman .rope { width: 0.5vw; height: 15%; left: 62.5%; top: 1vw; }
+    .hangman .head {
+      width: 20%; height: 20%;
+      border-radius: 50%;
+      left: 52.5%;
+      top: 15%;
+    }
+    .hangman .body { width: 1vw; height: 25%; left: 62.5%; top: 30%; }
+    .hangman .left-arm, .hangman .right-arm {
+      width: 25%; height: 1vw;
+      top: 35%;
+    }
+    .hangman .left-arm { left: 42.5%; transform: rotate(-45deg); }
+    .hangman .right-arm { left: 62.5%; transform: rotate(45deg); }
+    .hangman .left-leg, .hangman .right-leg {
+      width: 25%; height: 1vw;
+      top: 55%;
+    }
+    .hangman .left-leg { left: 42.5%; transform: rotate(-45deg); }
+    .hangman .right-leg { left: 62.5%; transform: rotate(45deg); }
+    /* Word and Hint */
+    .word-display {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      letter-spacing: 1vw;
+      margin-bottom: 2vw;
+    }
+    .hint {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      margin-bottom: 2vw;
+      color: #ffeb3b;
+      font-style: italic;
+      opacity: 0;
+      animation: fadeInHint 1s ease forwards;
+    }
+    @keyframes fadeInHint {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    /* Keyboard */
+    .keyboard {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1vw;
+      margin-bottom: 2vw;
+    }
+    .key {
+      background: rgba(255, 255, 255, 0.1);
+      padding: clamp(1vw, 2vw, 1.5vw) clamp(1.5vw, 2.5vw, 2vw);
+      border-radius: 1vw;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0.2vw 0.5vw rgba(0, 0, 0, 0.2);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      opacity: 0;
+      animation: keyPop 0.5s ease forwards;
+      animation-delay: calc(0.05s * (var(--index)));
+    }
+    @keyframes keyPop {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .key:hover {
+      background: rgba(255, 235, 59, 0.3);
+      transform: translateY(-0.3vw);
+      box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.3);
+    }
+    .key.disabled {
+      background: #777;
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+    /* Message and Restart */
+    .message {
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      margin-bottom: 2vw;
+      color: #ffeb3b;
+      opacity: 0;
+      animation: fadeInMessage 0.5s ease forwards;
+    }
+    @keyframes fadeInMessage {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .restart-button {
+      background: #ff5722;
+      padding: 1vw 2vw;
+      border: none;
+      border-radius: 1vw;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0.2vw 0.5vw rgba(0, 0, 0, 0.2);
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+    .restart-button:hover {
+      transform: translateY(-0.3vw);
+      box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.3);
+    }
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hangman-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .hangman {
+        margin-bottom: 4vw;
+      }
+      .keyboard {
+        gap: 0.5vw;
+      }
+    }
+    @media (max-width: 480px) {
+      .word-display {
+        letter-spacing: 0.5vw;
+      }
+      .key {
+        padding: 2vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="intro" id="intro">
+      <h2>Chemistry Hangman</h2>
+      <p>
+        Dive into the world of chemistry with this fun hangman game! Guess the names of elements from the periodic table using the hints provided. You have 6 wrong guesses before the hangman is complete. Learn while you play—start now!
+      </p>
+      <div class="start-btn" id="startBtn">Start Game</div>
+    </div>
+    <h1>Chemistry Hangman</h1>
+    <div class="hangman-container">
+      <div class="hangman">
+        <div class="base"></div>
+        <div class="pole"></div>
+        <div class="beam"></div>
+        <div class="rope"></div>
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="left-arm"></div>
+        <div class="right-arm"></div>
+        <div class="left-leg"></div>
+        <div class="right-leg"></div>
+      </div>
+      <div>
+        <div class="word-display" id="wordDisplay"></div>
+        <div class="hint" id="hint"></div>
+      </div>
+    </div>
+    <div class="keyboard" id="keyboard"></div>
+    <div class="message" id="message"></div>
+    <button class="restart-button" id="restartButton">Restart Game</button>
+  </div>
+
+  <script>
+    // Chemistry Questions
+    const words = [
+      { word: "HYDROGEN", hint: "The lightest element on the periodic table." },
+      { word: "OXYGEN", hint: "Essential for respiration and combustion." },
+      { word: "CARBON", hint: "The basis of organic chemistry." },
+      { word: "NITROGEN", hint: "Makes up 78% of Earth's atmosphere." },
+      { word: "SODIUM", hint: "A reactive metal that reacts violently with water." },
+      { word: "HELIUM", hint: "A noble gas used in balloons." },
+      { word: "CHLORINE", hint: "A greenish-yellow gas used in disinfectants." },
+      { word: "CALCIUM", hint: "Essential for strong bones and teeth." },
+      { word: "MAGNESIUM", hint: "A metal that burns with a bright white flame." },
+      { word: "SULFUR", hint: "A yellow element used in gunpowder." },
+    ];
+
+    let selectedWord = words[Math.floor(Math.random() * words.length)];
+    let guessedLetters = [];
+    let mistakes = 0;
+    const maxMistakes = 6;
+
+    // DOM Elements
+    const intro = document.getElementById('intro');
+    const startBtn = document.getElementById('startBtn');
+    const wordDisplay = document.getElementById('wordDisplay');
+    const hint = document.getElementById('hint');
+    const keyboard = document.getElementById('keyboard');
+    const message = document.getElementById('message');
+    const restartButton = document.getElementById('restartButton');
+    const hangmanParts = document.querySelectorAll('.hangman div');
+
+    // Start Game
+    startBtn.addEventListener('click', () => {
+      intro.classList.add('hidden');
+      initGame();
+    });
+
+    // Initialize Game
+    function initGame() {
+      guessedLetters = [];
+      mistakes = 0;
+      selectedWord = words[Math.floor(Math.random() * words.length)];
+      updateWordDisplay();
+      updateHint();
+      createKeyboard();
+      resetHangman();
+      message.textContent = "";
+    }
+
+    // Update Word Display
+    function updateWordDisplay() {
+      wordDisplay.textContent = selectedWord.word
+        .split('')
+        .map(letter => (guessedLetters.includes(letter) ? letter : '_'))
+        .join(' ');
+      if (!wordDisplay.textContent.includes('_')) {
+        message.textContent = "Congratulations! You won!";
+        message.style.animation = 'fadeInMessage 0.5s ease forwards';
+        disableKeyboard();
+      }
+    }
+
+    // Update Hint
+    function updateHint() {
+      hint.textContent = `Hint: ${selectedWord.hint}`;
+      hint.style.animation = 'fadeInHint 1s ease forwards';
+    }
+
+    // Create Keyboard
+    function createKeyboard() {
+      keyboard.innerHTML = '';
+      for (let i = 65; i <= 90; i++) {
+        const letter = String.fromCharCode(i);
+        const key = document.createElement('div');
+        key.classList.add('key');
+        key.textContent = letter;
+        key.style.setProperty('--index', i - 65); // For animation delay
+        key.addEventListener('click', () => handleGuess(letter));
+        keyboard.appendChild(key);
+      }
+    }
+
+    // Handle Guess
+    function handleGuess(letter) {
+      if (guessedLetters.includes(letter)) return;
+      guessedLetters.push(letter);
+      if (!selectedWord.word.includes(letter)) {
+        mistakes++;
+        updateHangman();
+      }
+      updateWordDisplay();
+      disableKey(letter);
+      checkGameOver();
+    }
+
+    // Update Hangman
+    function updateHangman() {
+      hangmanParts[mistakes].classList.add('show');
+    }
+
+    // Reset Hangman
+    function resetHangman() {
+      hangmanParts.forEach(part => part.classList.remove('show'));
+    }
+
+    // Disable Key
+    function disableKey(letter) {
+      const key = Array.from(keyboard.children).find(
+        key => key.textContent === letter
+      );
+      if (key) key.classList.add('disabled');
+    }
+
+    // Disable Keyboard
+    function disableKeyboard() {
+      Array.from(keyboard.children).forEach(key => key.classList.add('disabled'));
+    }
+
+    // Check Game Over
+    function checkGameOver() {
+      if (mistakes === maxMistakes) {
+        message.textContent = `Game Over! The word was ${selectedWord.word}.`;
+        message.style.animation = 'fadeInMessage 0.5s ease forwards';
+        disableKeyboard();
+      }
+    }
+
+    // Restart Game
+    restartButton.addEventListener('click', initGame);
+  </script>
+</body>
+</html>

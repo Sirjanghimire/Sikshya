@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <title>Educenter - Physics Help (Class 11 & 12)</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- ** Plugins Needed for the Project ** -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="plugins/animate/animate.css">
+  <link rel="stylesheet" href="plugins/aos/aos.css">
+  <link rel="stylesheet" href="plugins/venobox/venobox.css">
+
+  <!-- Main Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  
+  <!--Favicon-->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Inline CSS for Physics Help Styling -->
+  <style>
+    .section-sm { padding: 60px 0; }
+    .course-section, .resources-section, .study-plan-section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .course-section h3, .resources-section h3, .study-plan-section h3 {
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+    .course-section h4, .resources-section h4, .study-plan-section h4 {
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+    .list-styled { padding-left: 20px; }
+    .list-styled li { margin-bottom: 10px; }
+    .study-plan-section ul { margin-left: 20px; }
+    .resources-stack { margin-top: 20px; }
+    .resources-stack h4 { color: #0056b3; margin-bottom: 10px; }
+    .resources-stack ul { list-style-type: none; padding-left: 0; }
+    .resources-stack ul li { margin-bottom: 8px; }
+    .resources-stack a { color: #007bff; text-decoration: none; }
+    .resources-stack a:hover { text-decoration: underline; }
+  </style>
+</head>
+
+<body>
+
+<!-- header (unchanged) -->
+<header class="fixed-top header">
+  <div class="top-header py-2 bg-white">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-lg-4 text-center text-lg-left">
+          <a class="text-color mr-3" href="callto:+443003030266"><strong>CALL</strong> +44 300 303 0266</a>
+          <ul class="list-inline d-inline">
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-facebook"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-linkedin"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-8 text-center text-lg-right">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="notice.html">notice</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="research.html">research</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="scholarship.html">SCHOLARSHIP</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#loginModal">login</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#signupModal">register</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navigation w-100">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light p-0">
+        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav ml-auto text-center">
+            <li class="nav-item @@home"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item @@about"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item @@courses"><a class="nav-link" href="courses.html">COURSES</a></li>
+            <li class="nav-item @@events"><a class="nav-link" href="events.html">EVENTS</a></li>
+            <li class="nav-item active"><a class="nav-link" href="physics-help.html">PHYSICS HELP</a></li>
+            <li class="nav-item dropdown view">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Pages</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="teacher.html">Teacher</a>
+                <a class="dropdown-item" href="teacher-single.html">Teacher Single</a>
+                <a class="dropdown-item" href="notice.html">Notice</a>
+                <a class="dropdown-item" href="notice-single.html">Notice Details</a>
+                <a class="dropdown-item" href="research.html">Research</a>
+                <a class="dropdown-item" href="scholarship.html">Scholarship</a>
+                <a class="dropdown-item" href="course-single.html">Course Details</a>
+                <a class="dropdown-item" href="event-single.html">Event Details</a>
+              </div>
+            </li>
+            <li class="nav-item @@contact"><a class="nav-link" href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<!-- /header -->
+
+<!-- Modals (Login/Register) remain unchanged -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content rounded-0 border-0 p-4">
+      <div class="modal-header border-0">
+        <h3>Register</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="#" class="row">
+          <div class="col-12">
+            <input type="text" class="form-control mb-3" id="signupPhone" name="signupPhone" placeholder="Phone">
+          </div>
+          <div class="col-12">
+            <input type="text" class="form-control mb-3" id="signupName" name="signupName" placeholder="Name">
+          </div>
+          <div class="col-12">
+            <input type="email" class="form-control mb-3" id="signupEmail" name="signupEmail" placeholder="Email">
+          </div>
+          <div class="col-12">
+            <input type="password" class="form-control mb-3" id="signupPassword" name="signupPassword" placeholder="Password">
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">SIGN UP</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content rounded-0 border-0 p-4">
+      <div class="modal-header border-0">
+        <h3>Login</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="#" class="row">
+          <div class="col-12">
+            <input type="text" class="form-control mb-3" id="loginPhone" name="loginPhone" placeholder="Phone">
+          </div>
+          <div class="col-12">
+            <input type="text" class="form-control mb-3" id="loginName" name="loginName" placeholder="Name">
+          </div>
+          <div class="col-12">
+            <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password">
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">LOGIN</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- page title (unchanged) -->
+<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="physics-help.html">Physics Help</a></li>
+          <li class="list-inline-item text-white h3 font-secondary nasted">Class 11 & 12</li>
+        </ul>
+        <p class="text-lighten">Your one-stop guide for mastering Physics in Class 11 & 12 (NEB Curriculum). Find course structures, resources, and study plans here!</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /page title -->
+
+<!-- physics help section -->
+<section class="section-sm">
+  <div class="container">
+    <!-- Course Structure -->
+    <div class="course-section">
+      <h3 class="mb-4">Course Structure (Class 11 & 12 Physics - NEB)</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Class 11 Physics</h4>
+          <ul class="list-styled">
+            <li>Mechanics: Kinematics, Laws of Motion, Work, Energy, Power</li>
+            <li>Heat and Thermodynamics</li>
+            <li>Waves and Sound</li>
+            <li>Electricity and Magnetism</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h4>Class 12 Physics</h4>
+          <ul class="list-styled">
+            <li>Current Electricity</li>
+            <li>Magnetic Effects of Current and Magnetism</li>
+            <li>Electromagnetic Induction and Alternating Current</li>
+            <li>Optics and Wave Optics</li>
+            <li>Modern Physics: Dual Nature, Atoms, Nuclei</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resources Stack -->
+    <div class="resources-section">
+      <h3 class="mb-4">Resources Stack</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Class 11/12 Physics</h4>
+          <div class="resources-stack">
+            <h5>YouTube Videos</h5>
+            <ul>
+              <li><a href="https://www.youtube.com/c/PhysicsWallah" target="_blank">Physics Wallah (believe me he teaches well)</a> - Comprehensive Class 11 Physics tutorials.</li>
+              <li><a href="https://www.youtube.com/c/KhanAcademy" target="_blank">Khan Academy </a> - Free physics lessons for mechanics and waves.</li>
+              <li><a href="https://youtube.com/@gurubaa?si=naPCo32T-0uGey4s" target="_blank">Guruba</a> - Crash courses for NEB Physics.</li>
+              <li><a href="https://youtube.com/@gurubaa?si=naPCo32T-0uGey4s" target="_blank">Iraj Parajuli</a> - Crash courses for NEB Physics.</li>
+              <li><a href="https://youtube.com/@tuitionmastersumityadav?si=3z_0DeyKqLYFJR30" target="_blank">Tuton master Nepali</a> - Crash courses for NEB Physics.</li>
+              <!-- Add more YouTube links as needed -->
+            </ul>
+            <h5>Websites (Name and URL)</h5>
+            <ul>
+              <li><a href="https://neb.gov.np" target="_blank">NEB Official Site</a> - Access syllabus and past papers.</li>
+              <li><a href="https://note-library.netlify.app/quizzes" target="_blank">Note library</a> - Interactive physics lessons and simulations.</li>
+              <li><a href="https://www.khanacademy.org/science/physics" target="_blank">Khan Academy Physics</a> - Free resources for Class 11 topics.</li>
+              <!-- Add more websites as needed -->
+            </ul>
+            <h5>notes and other resources</h5>
+            <ul>
+              <li><a href="https://sajhanotes.com/neb-grade-12-paper/neb-grade-12-physics-model-question-paper/">sajha notes</a></li>
+              <li><a href="https://www.tsz.com.np/2022/02/class-12-physics-most-important.html">SK learning zone</a></li>
+              <li><a href="https://nepalenotes.com/2021/12/class-12-physics-notes/">NepaliEnotes</a></li>
+              <li>Physics for Class 11 (NEB Curriculum)</li>
+              <li>Old is gold for practice</li>
+              <li>RD verma numerical</li>
+              <!-- Add more resources as needed -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Study Plans for Class 11 -->
+    <div class="study-plan-section">
+      <h3 class="mb-4">Last minute study tips and resources for board exams</h3>
+      <h4>Rescource link</h4>
+      <p>Below is the drive links of note that might me helpful in your last minute preparation. I want to thank
+        my juniors from Bal kalyan Vidhya Mandir for helping me with the resources.
+      </p>
+     <h2><a href="https://drive.google.com/drive/folders/1Vv7E-S_EkI_KnC5d0bH702QhxPgY_DjX?usp=drive_link">Click here for resources</a></h2> 
+     
+    
+    <!-- jQuery -->
+    <script src="plugins/jQuery/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- slick slider -->
+    <script src="plugins/slick/slick.min.js"></script>
+    <!-- aos -->
+    <script src="plugins/aos/aos.js"></script>
+    <!-- venobox popup -->
+    <script src="plugins/venobox/venobox.min.js"></script>
+    <!-- mixitup filter -->
+    <script src="plugins/mixitup/mixitup.min.js"></script>
+    <!-- google map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+    <script src="plugins/google-map/gmap.js"></script>
+    <!-- Main Script -->
+    <script src="js/script.js"></script>
+    
+    </body>
+    </html>
+    </body>
+    </html>
